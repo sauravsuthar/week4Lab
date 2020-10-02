@@ -9,15 +9,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Simple note </title>
     </head>
     <body>
          <h1>Simple Note Keeper</h1>
         <h2>Edit Note</h2>
         <form method="post" action="note">
-            <strong>Title: </strong> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<input type="text" name="title" value="${title}"><br>
-            <strong>Contents: </strong><textarea id="content" name="content" cols="22" rows="6">${content}</textarea><br>
-            <br>
+            <p>Title: </p><input type="text" name="title" value="${title}"><br>
+            <p>Contents: </p><textarea id="content" name="content" >${content}</textarea><br>
+            
             <input type="submit" value="Save">
         </form>
     </body>

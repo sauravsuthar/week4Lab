@@ -21,7 +21,7 @@ import models.Note;
 
 /**
  *
- * @author Saurav
+ * @author Saurav(808735)
  */
 public class NoteServlet extends HttpServlet {
 
@@ -29,12 +29,9 @@ public class NoteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-       /**
-         * display the note.txt on the webpage for both view and edit
-         */
+      
         String path = getServletContext().getRealPath("/WEB-INF/note.txt");
-        // to read files
+        
         BufferedReader br = new BufferedReader(new FileReader(new File(path)));
         String title = br.readLine();
         String content = br.readLine();
@@ -42,8 +39,8 @@ public class NoteServlet extends HttpServlet {
         Note note = new Note(title, content);
         br.close();
 
-        String edit = request.getParameter("edit");
-        if (!"".equals(edit))
+        String s = request.getParameter("edit");
+        if (!"".equals(s))
         {
             request.setAttribute("title", note.getTitle());
             request.setAttribute("content", note.getContent());
@@ -64,9 +61,7 @@ public class NoteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-         /**
-         * Save changes from editnote
-         */
+      
         String path = getServletContext().getRealPath("/WEB-INF/note.txt");
         BufferedReader br = new BufferedReader(new FileReader(new File(path)));
         String title = br.readLine();

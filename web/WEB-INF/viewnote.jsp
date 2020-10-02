@@ -13,11 +13,12 @@
     </head>
     <body>
      <h1>Simple Note Keeper</h1>
+     
         <h2>View Note</h2>
 
-        <strong>Title: </strong> ${title}<br> <br>
-        <strong> Contents: </strong> ${content}<br>
-        <br>
+        <p>Title: </p> ${title}<br> 
+        <p> Contents: </p> ${content}<br>
+        
         <a href="note?edit">Edit</a>
     </body>
 </html>
